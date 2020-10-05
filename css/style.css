@@ -98,9 +98,9 @@ footer{
 
 header{
   background: url(../images/header.jpg);
-  background-repeat: no-repeat; /* Parallax effect */    
-  background-position: bottom;  /* Parallax effect */
-  background-attachment: fixed; /* Parallax effect */ 
+  background-attachment: fixed; /* Parallax effect */     
+  object-fit: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
   background-size: cover;       /* Parallax effect */
   color: white;
   height: 400px;                /* Parallax effect */
