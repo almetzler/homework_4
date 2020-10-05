@@ -36,7 +36,13 @@ nav a{
 /*Your Code Here*/
 /*Write selector/rule property to add an underline when
 links in the navigation are in the hover or focus state.*/
+nav a:link{
+  text-decoration: none;
+}
 
+nav a:hover{
+  text-decoration: underline;
+}
 
 .skip a{
   background: white;
@@ -47,19 +53,28 @@ links in the navigation are in the hover or focus state.*/
   z-index: 1;
 
   /*Your code here*/
+  position: relative;
+  top: -40px;
 }
 
 /*Your Code Here*/
 /*Write selector/rule property to position the skip class element*/
+.skip a:focus{
+  position: relative;
+  top: 0px;
+}
 
 /*Your Code Here*/
 /*Write selector/rule property to style all elements when in focus*/
+:focus{
+  border: 2px solid black;
+}
 
 
 nav{
   background-color: #ddd;
   padding: 25px 0; 
-  text-align: left;
+  text-align: right;
 }
 
 footer{
@@ -74,19 +89,25 @@ footer{
 
 .container{
   /*Your Code Here*/
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 5 auto;
+  grid-row-gap: 15px;
+
 }
 
 header{
   background-attachment: fixed; /* Parallax effect */     
   background-position: center;  /* Parallax effect */
   background-repeat: no-repeat; /* Parallax effect */
-  background-size: cover;       /* Parallax effect */
+  
   color: white;
   height: 400px;                /* Parallax effect */
 
   /*Your Code Here*/
   /*Set background-image to header.jpg */
- 
+  background: url(../images/header.jpg);
+  background-size: cover;       /* Parallax effect */
 
   grid-column: 1 / -1;  /*Can you explain what this does?*/
   grid-row: 1 / auto;   /*Can you rewrite it?*/
@@ -95,39 +116,47 @@ header{
 header p{
   color: white;
   font-size: 24px;
-  padding: 0 100px;
-  text-align: center;
+  padding: 0 0px;
+  text-align: left;
 }
 
 .about, .method, .clients, .contact{
   /*Your Code Here*/
+  grid-column: 2/span 1;
 
 }
 
 .about-image, .method-image, .clients-image, .contact-image{
   /*Your Code Here*/
+  grid-column: 1/-1;
+  max-height: 700px;
+  overflow: hidden;
 
 }
 
 .about, .about-image{
    /*Your Code Here*/
+   grid-row: 2/span 1;
 
 }
 
 .method, .method-image{
    /*Your Code Here*/
+   grid-row: 3/span 1;
 
 }
 
 
 .clients, .clients-image{
     /*Your Code Here*/
+    grid-row: 4/span 1;
 
 }
 
 
 .contact, .contact-image{
     /*Your Code Here*/
+    grid-row: 5/span 1;
 
 }
 
@@ -135,6 +164,7 @@ header p{
 background-color: rgba(255, 255, 255, .8);
   border: 10px solid black;
   padding: 30px;
+  margin: auto;
   /*Your code here:*/
 
 }
@@ -143,19 +173,26 @@ background-color: rgba(255, 255, 255, .8);
 @media all and (min-width: 800px){
   nav{
     padding: 30px 0px;
-    /*Your code here:*/
+    text-align: right;
+    vertical-align: middle;
   }
 
   .container{
     /*Your code here:*/
+    display: grid;
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: repeat(400px,5);
+    grid-row-gap: 15px;
   }
 
   .about, .clients, .method-image, .contact-image{
     /*Your code here:*/
+    grid-column: 3/span 2;
   }
 
   .about-image, .clients-image, .method, .contact{
     /*Your code here:*/
+    grid-column: 2/span 2;
   }
 }
 
